@@ -43,7 +43,7 @@
 	</example>
 
 
-    <parameter name="device" type="string" default="/dev/cu.usbserial-A7005Lxn" description="Path to serial device" />
+    <parameter name="device" type="string" default="/dev/cu.usbserial-A4012AK3" description="Path to serial device" />
     <parameter name="baud_rate" type="int" default="1000000" description="Serial baud rate" />
 	<parameter name="print_info" type="list" values="none/minimal/full" default="minimal" description="Print information about the servos to console. Minimal prints a few important features of the servo. Full prints the whole control table." />
 

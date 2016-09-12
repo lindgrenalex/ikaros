@@ -9,7 +9,7 @@
     <module
     class = "DynamixelConfigure"
     name = "DynamixelConfigure"
-    device  = "/dev/cu.usbserial-A8005hj3"
+    device  = "/dev/cu.usbserial-A4012AK3"
     _baud_rate = "57600"
     _baud_rate = "115200"
     baud_rate = "1000000"
