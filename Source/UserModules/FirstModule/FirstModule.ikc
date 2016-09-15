@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<group name="FirstModule" description="Our first module">
+
+	<example description="Our first module">
+		<module
+			class="FirstModule"
+			name="FirstModule"
+		/>
+	</example>
+
+<!--
+	<parameter name="degrees" type="float" default="0" description="degree parameter" />
+
+	<input name="INPUT1" description="The first input" />
+-->
+
+	<output name="OUTPUT" description="The first output" size="1" />
+
+	<module class="FirstModule" />
+    
+    <view title="FirstModule">
+        <object
+        x="0" y="0" w="2"
+        class="Plot"
+        module="*"
+        source="OUTPUT"
+        title="test plot first module"
+        min="-1"
+        max="1"
+        />
+    </view>
+
+
+   <files>
+   		<file>FirstModule.h</file>
+   		<file>FirstModule.cc</file>
+   		<file>FirstModule.ikc</file>
+   </files>
+
+</group>
+
