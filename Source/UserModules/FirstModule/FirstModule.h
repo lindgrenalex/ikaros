@@ -21,12 +21,16 @@ public:
     // pointers to inputs and outputs
     // and integers to represent their sizes
 
-    float *     output_array;
-    int         output_array_size;
+    float *     input_array;
+    float *     input_array2;
+    
+    float *     output_array1;
+    float *     output_array2;
+    float *     output_array3;
 
     // parameter values
 
-    float       degrees;
+    int       int_start_parameter;
 };
 
 #endif

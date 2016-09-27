@@ -16,7 +16,6 @@ FirstModule::Init()
     // user interface while Ikaros is running. If the parameter is not
     // set, the default value will be used instead.
     
-    // Bind(degrees, "degrees");
     
     // This is were we get pointers to the inputs and outputs
 
@@ -25,8 +24,10 @@ FirstModule::Init()
     // It does not matter whether a matrix of array is connected
     // to the inputs. We will treat it an array in this module
     // anyway.
+    
 
-    // input_array = GetInputArray("INPUT1");
+    input_array = GetInputArray("INPUT");
+    input_array2 = GetInputArray("INPUT2");
     // input_array_size = GetInputSize("INPUT1");
 
     // Get pointer to a matrix and treat it as a matrix. If an array is
@@ -38,8 +39,11 @@ FirstModule::Init()
 
     // Do the same for the outputs
 
-    output_array = GetOutputArray("OUTPUT");
-    output_array_size = GetOutputSize("OUTPUT");
+    output_array1 = GetOutputArray("OUTPUT1");
+    
+    output_array2 = GetOutputArray("OUTPUT2");
+    
+    output_array3 = GetOutputArray("OUTPUT3");
     
     t = 0;
 
@@ -102,7 +106,30 @@ FirstModule::Tick()
 
     //random(output_array, 0.0, 1.0, output_array_size);
     
-    output_array[0] = 45;
+    
+    if(input_array2[0] == 1) {
+    
+        output_array1[0] = 180;
+        output_array2[0] = 100;
+        output_array3[0] = 200;
+    
+    } else if (input_array2[0] == 2) {
+        
+        output_array1[0] = 180;
+        output_array2[0] = 200;
+        output_array3[0] = 255;
+        
+    } else {
+    
+        printf("Not found any markers /n");
+    }
+    
+    printf("Parameter \n");
+    printf("%f", input_array[0]);
+    printf("\n");
+    
+    //output_array[0] = 100+50*sin(0.25*(float(t)+0.0));
+
     
     t++;
 }

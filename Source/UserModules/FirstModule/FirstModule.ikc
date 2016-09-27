@@ -8,14 +8,65 @@
 			name="FirstModule"
 		/>
 	</example>
+    
+    <module
+        class 			= "Kinect"
+        name 			= "Kinect"
+        mode            = "mm"
+        xtion           = "false"
+    />
+    
+    <module
+        class = "MarkerTracker"
+        name = "MarkerTracker"
+        marker_size = "0 999 45; 1000 1999 90; 2000 2999 24"
+    />
+    
+    <connection
+        sourcemodule = "Kinect"
+        source = "INTENSITY"
+        targetmodule = "MarkerTracker"
+        target = "INPUT"
+        delay = "0"
+    />
+    
+    <module
+        class = "Constant"
+        name = "NbrMarkers"
+        outputsize = "1"
+        data = "0"
+    
+    />
+    
+    <connection
+        sourcemodule = "MarkerTracker"
+        source = "MARKER_COUNT"
+        targetmodule = "NbrMarkers"
+        target = "INPUT"
+    />
+    
+    <connection
+        sourcemodule = "NbrMarkers"
+        source = "OUTPUT"
+        targetmodule = "FirstModule"
+        target = "INPUT2"
+    />
+    
+    
 
-<!--
-	<parameter name="degrees" type="float" default="0" description="degree parameter" />
+    <!--
+	<parameter name="StartButton" type="int" default="0" description="startbutton parameter" />
+     -->
 
-	<input name="INPUT1" description="The first input" />
--->
+	<input name="INPUT" description="The first input" />
+    
+    <input name="INPUT2" description="Number of found markers" />
 
-	<output name="OUTPUT" description="The first output" size="1" />
+	<output name="OUTPUT1" description="The first output" size="1" />
+    
+    <output name="OUTPUT2" description="The second output" size="1" />
+    
+    <output name="OUTPUT3" description="The third output" size="1" />
 
 	<module class="FirstModule" />
     
@@ -24,11 +75,32 @@
         x="0" y="0" w="2"
         class="Plot"
         module="*"
-        source="OUTPUT"
+        source="OUTPUT1"
         title="test plot first module"
         min="-1"
         max="1"
         />
+        
+        <object
+        x="2" y="0" w="2"
+        class="Plot"
+        module="*"
+        source="OUTPUT2"
+        title="test plot first module"
+        min="-1"
+        max="1"
+        />
+        
+        <object
+        x="4" y="0" w="2"
+        class="Plot"
+        module="*"
+        source="OUTPUT3"
+        title="test plot first module"
+        min="-1"
+        max="1"
+        />
+        
     </view>
 
 
